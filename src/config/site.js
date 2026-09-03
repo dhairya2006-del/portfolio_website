@@ -15,7 +15,7 @@ const site = {
   // Update these to your real profile URLs.
   links: {
     github: 'https://github.com/dhairya2006-del',
-    linkedin: 'https://linkedin.com/',
+    linkedin: 'https://www.linkedin.com/in/dhairya-joshi-169b57327/',
     resume: `/curriculum_vitae_.pdf`, // put curriculum_vitae_.pdf in /public to enable the download button
   },
 
