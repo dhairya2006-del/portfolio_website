@@ -50,13 +50,14 @@ const projects = [
   {
     slug: 'llm-response-preference-classification',
     title: 'LLM Response Preference Classification – Kaggle Competition',
-    dateLabel: 'Sept 2026',
+    dateLabel: 'Aug 2026 – Sept 2026',
     summary:
-      'Fine-tuned Llama-3 and Gemma-2 models on ~57,400 datapoints to predict human chatbot preferences, placing 8th of 224 teams (top 4% solo).',
+      'Fine-tuned Llama-3 and Gemma-2 models on ~57,400 datapoints to predict human chatbot preferences, placing 2nd of 224 teams (top 1% solo).',
     bullets: [
       'Fine-tuned Llama-3 and Gemma-2 sequence-classification models on ~57,400 datapoints to predict human preference between pairs of LLM chatbot responses, framing the task as a 3-class (win A / win B / tie) classification problem.',
-      'Engineered a pipelined multi-GPU inference system splitting each Llama-3 model across two GPUs, using variable-length attention (xFormers block-diagonal causal masking) and sharded max-token batching to eliminate padding waste and maximize throughput.',
-      'Combined Llama-3 and Gemma-2 predictions with response-order swapping as test-time augmentation via weighted ensembling, achieving a 0.83040 log-loss and, competing solo, placing 8th of 224 teams (top 4%).',
+      'Engineered a pipelined multi-GPU inference system splitting each Llama-3 model across two GPUs, using variable-length attention (xFormers block-diagonal masking) and sharded max-token batching to eliminate padding waste and maximize throughput.',
+      'Benchmarked the Llama-3/Gemma-2 ensemble against an LSTM baseline, reducing log-loss from 1.13208 to 0.83039 (~27% improvement), motivating the switch to transformer-based sequence classification.',
+      'Ensembled Llama-3 and Gemma-2 predictions with test-time augmentation, achieving a 0.83039 log-loss – a top-1% finish (2nd place) among 224 entries.',
     ],
     tech: ['Python', 'PyTorch', 'HuggingFace Transformers', 'Llama 3', 'Gemma 2', 'xFormers', 'Multi-GPU Inference'],
     repo: 'https://github.com/dhairya2006-del/LLM_Classification_Finetuning',

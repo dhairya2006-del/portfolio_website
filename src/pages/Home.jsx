@@ -150,7 +150,7 @@ export default function Home() {
             </div>
             <div className="rounded-lg border border-line bg-paper/50 p-4">
               <div className="font-mono text-xs text-volt font-semibold mb-1">Kaggle Competition</div>
-              <p className="text-sm text-bone font-medium">Ranked 8th of 224 teams (Top 4%)</p>
+              <p className="text-sm text-bone font-medium">Ranked 2nd of 224 teams (Top 1%)</p>
               <p className="text-xs text-fog mt-1">LLM Classification Finetuning Competition · Solo participant</p>
             </div>
           </div>
