@@ -14,17 +14,16 @@
 
 const experience = [
   {
-    company: 'FinSense AI',
+    company: 'SME, IIT Jodhpur',
     role: 'Undergraduate Research Assistant',
     location: 'IIT Jodhpur, India',
     start: 'Dec 2025',
     end: 'Jan 2026',
     supervisor: 'Prof. G. Venkat Ram Reddy, SME, IIT Jodhpur',
-    repo: 'https://github.com/dhairya2006-del/FinSenseAI',
     points: [
-      'Engineered 80+ leakage-safe features from market data, news sentiment, and Google Trends signals across 20+ stocks, lowering next-day return prediction error by 20% via a weighted ensemble of Random Forest, Gradient Boosting, and XGBoost models.',
-      'Deployed a FastAPI backend exposing REST APIs to a live frontend with real-time progress tracking, serving predictions across the full tracked ticker universe alongside an event-driven backtesting engine (fixed/trailing/ATR stop-loss) evaluated via Sharpe ratio, max drawdown, and win-rate.',
-      'Diagnosed and resolved production JSON serialization failures from NaN/Inf propagation in external financial APIs, eliminating recurring backend crashes.',
+      'Automated finance payment processing with Playwright and n8n, enforcing human-in-the-loop approval gates for zero unauthorized executions across 10 autonomous payment runs.',
+      'Integrated event-driven webhooks with fallback sweeps and a JSONL audit trail, enabling autonomous recovery of missed events and sub-15s approval resolution with duplicate-free records.',
+      'Optimized a log-segmentation model on 162K events to partition operation logs into business-process executions, validated on 20K unseen events, cutting per-operation processing time 10x (20s → 2s).',
     ],
   },
 ]

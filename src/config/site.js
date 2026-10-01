@@ -7,9 +7,9 @@ const site = {
   name: 'Dhairya Joshi',
   role: 'B.Tech in Mechanical Engineering (Minor in AI) @ IIT Jodhpur',
   tagline:
-    'I build low-latency AI safety systems, quantitative hedging simulators, and fine-tune LLMs where algorithms meet scale and uncertainty.',
+    'I build machine learning, deep learning, and LLM systems — from low-latency AI guardrails to multi-GPU fine-tuning and quantitative ML.',
   location: 'IIT Jodhpur, India',
-  email: 'b24me1024@iitj.ac.in',
+  email: 'dhairya4617@gmail.com',
   phone: '+91-8905823402',
 
   // Update these to your real profile URLs.

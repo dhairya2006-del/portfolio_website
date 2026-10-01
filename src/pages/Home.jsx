@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import site from '../config/site'
 import projects from '../data/projects'
 import experience from '../data/experience'
+import skills, { coursework } from '../data/skills'
 import StockPathHero from '../components/StockPathHero'
 import ProjectCard from '../components/ProjectCard'
 import Eyebrow from '../components/Eyebrow'
@@ -41,10 +42,10 @@ export default function Home() {
             variants={heroLine}
             className="mt-5 text-fog leading-relaxed max-w-lg"
           >
-            I'm {site.name}, an undergraduate at IIT Jodhpur pursuing B.Tech in Mechanical
-            Engineering with a Minor in AI. I build high-throughput systems and machine learning
-            models where algorithms meet scale and uncertainty — from low-latency Rust LLM
-            guardrail proxies and multi-GPU preference fine-tuning to adversarial deep hedging simulators.
+            I'm {site.name}, a B.Tech student at IIT Jodhpur (Minor in AI) specializing in machine
+            learning, deep learning, LLMs, and AI systems. I have hands-on experience in LLM
+            fine-tuning, multi-GPU inference, AI guardrails, ONNX deployment, async systems, and
+            quantitative ML — building end-to-end, production-oriented systems.
           </motion.p>
           <motion.div
             variants={heroLine}
@@ -99,12 +100,17 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 pt-3 border-t border-line/60">
-            <div className="font-mono text-xs text-fog">
-              <span className="text-mist">Senior Secondary (2024):</span> 92.2%
-            </div>
-            <div className="font-mono text-xs text-fog sm:text-right">
-              <span className="text-mist">Secondary (2022):</span> 96.4%
+          <div className="mt-4 pt-3 border-t border-line/60">
+            <p className="font-mono text-xs text-mist mb-2">Coursework</p>
+            <div className="flex flex-wrap gap-1.5">
+              {coursework.map((c) => (
+                <span
+                  key={c}
+                  className="font-mono text-[11px] px-2 py-0.5 rounded border border-line text-fog"
+                >
+                  {c}
+                </span>
+              ))}
             </div>
           </div>
         </section>
@@ -151,9 +157,33 @@ export default function Home() {
             <div className="rounded-lg border border-line bg-paper/50 p-4">
               <div className="font-mono text-xs text-volt font-semibold mb-1">Kaggle Competition</div>
               <p className="text-sm text-bone font-medium">Ranked 2nd of 224 teams (Top 1%)</p>
-              <p className="text-xs text-fog mt-1">LLM Classification Finetuning Competition · Solo participant</p>
+              <p className="text-xs text-fog mt-1">'LLM Classification Finetuning' competition · Competing solo</p>
             </div>
           </div>
+        </section>
+      </Reveal>
+
+      {/* Technical skills */}
+      <Reveal delay={0.05}>
+        <section className="py-10 border-b border-line">
+          <Eyebrow>Technical Skills</Eyebrow>
+          <dl className="mt-4 space-y-4">
+            {skills.map(({ group, items }) => (
+              <div key={group} className="grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-4">
+                <dt className="font-mono text-xs text-mist sm:mt-1">{group}</dt>
+                <dd className="flex flex-wrap gap-1.5">
+                  {items.map((t) => (
+                    <span
+                      key={t}
+                      className="font-mono text-[11px] px-2 py-0.5 rounded border border-line text-fog"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </section>
       </Reveal>
 

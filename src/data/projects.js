@@ -19,13 +19,13 @@ const projects = [
   {
     slug: 'checkerplane-ai-guardrail-proxy',
     title: 'CheckerPlane AI – Low-Latency LLM Guardrail Proxy',
-    dateLabel: 'Aug 2026',
+    dateLabel: 'Jul 2026 – Aug 2026',
     summary:
-      'A multi-tier, high-throughput AI safety proxy built in pure Rust with ONNX Runtime, cutting median guardrail latency from ~550ms to ~67ms (~8x reduction).',
+      'A multi-tier AI safety proxy in Rust with ONNX Runtime, replacing sequential Python guardrail chains with parallel async execution – cutting median latency ~8x (550ms → 67ms).',
     bullets: [
-      'Built a multi-tier AI safety proxy in pure Rust with ONNX Runtime, replacing sequential Python guardrail chains with parallel async gate execution, cutting median guardrail latency from ~550ms to ~67ms (~8x reduction).',
-      'Engineered a 4-gate parallel input rail (toxicity, PII/Aadhaar detection via BERT-based NER + regex, coherence scoring, prompt-injection defence) with early-exit cancellation, and a DeBERTa cross-encoder NLI hallucination gate scoring output grounding pre-delivery.',
-      'Achieved ~88% average gate accuracy across five safety gates with zero GPU dependency using quantised ONNX models; added a Tier-0 heuristic screen (<0.1ms) with configurable per-gate thresholds and fail-open policy.',
+      'Architected a multi-tier AI safety proxy in Rust with ONNX Runtime, replacing sequential Python guardrail chains with parallel async execution – cutting median latency ~8x (550ms → 67ms).',
+      'Implemented a 4-gate parallel input rail (toxicity, PII/Aadhaar NER, coherence, prompt-injection) with early-exit cancellation and a <0.1ms Tier-0 heuristic screen.',
+      'Trained a DeBERTa NLI hallucination gate scoring output grounding, reaching ~88% gate accuracy with zero GPU dependency via quantized ONNX models.',
     ],
     tech: ['Rust', 'ONNX Runtime', 'C++', 'DeBERTa', 'BERT', 'Tokio', 'Async Concurrency'],
     repo: 'https://github.com/dhairya2006-del/CheckerPlane',
@@ -34,14 +34,13 @@ const projects = [
   {
     slug: 'delta-hedging-adversarial-simulator',
     title: 'Delta Hedging & Adversarial Stock Path Generation Simulator',
-    dateLabel: 'Jul 2026 – Aug 2026',
+    dateLabel: 'May 2026 – Jun 2026',
     summary:
-      'A quantitative finance simulator benchmarking Black-Scholes delta hedging against deep learning-based hedging strategies across 10K+ synthetic market scenarios.',
+      'A quant finance simulator benchmarking classical delta hedging against deep learning-based strategies across 10,000+ Monte Carlo market scenarios.',
     bullets: [
-      'Built a quantitative finance simulator benchmarking Black-Scholes delta hedging against deep learning-based hedging strategies across 10,000+ synthetic market scenarios generated through Monte Carlo simulation.',
-      'Architected and trained a GRU-based deep hedging model using a custom Conditional Value-at-Risk (CVaR) loss function, reducing CVaR5% tail risk from Rs. 500 (Black-Scholes baseline) to Rs. 290, a 42% improvement.',
-      'Designed an adversarial training framework where a recurrent generator learns worst-case market conditions, further cutting CVaR5% to Rs. 100 – an 80% drop versus the Black-Scholes baseline.',
-      'Processed 8,500+ minute-level NIFTY options data points, computing implied volatility and Black-Scholes Greeks for model calibration and evaluation.',
+      'Built a quant finance simulator benchmarking classical delta hedging against deep learning-based strategies across 10,000+ Monte Carlo-simulated market scenarios.',
+      'Constructed a GRU-based hedging model with a custom CVaR loss function, cutting tail risk (CVaR5%) 42% versus the classical baseline (Rs. 500 → Rs. 290).',
+      'Designed an adversarial framework where a recurrent generator learns worst-case market conditions, pushing the tail-risk reduction to 80% overall (Rs. 100).',
     ],
     tech: ['Python', 'TensorFlow', 'NumPy', 'Pandas', 'Monte Carlo Simulation', 'Black-Scholes Model'],
     repo: 'https://github.com/dhairya2006-del/Deep_Adversarial_Hedger',
@@ -52,15 +51,32 @@ const projects = [
     title: 'LLM Response Preference Classification – Kaggle Competition',
     dateLabel: 'Aug 2026 – Sept 2026',
     summary:
-      'Fine-tuned Llama-3 and Gemma-2 models on ~57,400 datapoints to predict human chatbot preferences, placing 2nd of 224 teams (top 1% solo).',
+      'Fine-tuned Llama-3 and Gemma-2 classifiers on ~57,400 datapoints to predict human preference between LLM responses – 2nd of 224 teams (top 1%), solo.',
     bullets: [
-      'Fine-tuned Llama-3 and Gemma-2 sequence-classification models on ~57,400 datapoints to predict human preference between pairs of LLM chatbot responses, framing the task as a 3-class (win A / win B / tie) classification problem.',
-      'Engineered a pipelined multi-GPU inference system splitting each Llama-3 model across two GPUs, using variable-length attention (xFormers block-diagonal masking) and sharded max-token batching to eliminate padding waste and maximize throughput.',
-      'Benchmarked the Llama-3/Gemma-2 ensemble against an LSTM baseline, reducing log-loss from 1.13208 to 0.83039 (~27% improvement), motivating the switch to transformer-based sequence classification.',
-      'Ensembled Llama-3 and Gemma-2 predictions with test-time augmentation, achieving a 0.83039 log-loss – a top-1% finish (2nd place) among 224 entries.',
+      'Fine-tuned Llama-3 and Gemma-2 classifiers on ~57,400 datapoints to predict human preference between LLM response pairs (win A / win B / tie).',
+      'Engineered a pipelined multi-GPU inference system splitting Llama-3 across two GPUs, using xFormers block-diagonal attention and sharded batching to eliminate padding waste.',
+      'Benchmarked against an LSTM baseline, cutting log-loss from 1.13 to 0.83 (~27%), motivating the switch to transformer-based classification.',
+      'Ensembled predictions with test-time augmentation for a 0.83 log-loss – a top-1% finish among 224 teams.',
     ],
     tech: ['Python', 'PyTorch', 'HuggingFace Transformers', 'Llama 3', 'Gemma 2', 'xFormers', 'Multi-GPU Inference'],
     repo: 'https://github.com/dhairya2006-del/LLM_Classification_Finetuning',
+    featured: true,
+  },
+  {
+    slug: 'finsenseai-ml-stock-prediction',
+    title: 'FinSenseAI – Full-Stack ML Stock Prediction System',
+    dateLabel: 'Jan 2026 – May 2026',
+    summary:
+      'A full-stack ML system predicting next-day stock returns from market data, news sentiment, and Google Trends signals, with a FastAPI backend and an event-driven backtesting engine.',
+    bullets: [
+      'Leveraged market data, news sentiment, and Google Trends signals across 20+ stocks to create 80+ leakage-safe features for next-day return prediction.',
+      'Optimized prediction error by 20% through feature engineering and optimization of a weighted ensemble comprising Random Forest, Gradient Boosting, and XGBoost models.',
+      'Implemented and deployed a FastAPI backend exposing REST APIs consumed by a live frontend with real-time progress tracking.',
+      'Developed an event-driven backtesting engine supporting fixed, trailing, and ATR-based stop-loss strategies evaluated through Sharpe ratio, maximum drawdown, and win-rate metrics.',
+      'Diagnosed and resolved production JSON serialization failures caused by NaN/Inf propagation from external financial APIs.',
+    ],
+    tech: ['Python', 'FastAPI', 'Scikit-Learn', 'XGBoost', 'JavaScript', 'yFinance', 'NewsAPI'],
+    repo: 'https://github.com/dhairya2006-del/FinSenseAI',
     featured: true,
   },
 ]
